@@ -9,7 +9,7 @@ const client = new Client({
   ]
 });
 
-// ★ Renderから取得（ここ重要）
+// ★ Renderから取得
 const TOKEN = process.env.TOKEN;
 const API_URL = process.env.API_URL;
 
@@ -21,7 +21,19 @@ client.on('messageCreate', async (message) => {
   if (message.author.bot) return;
 
   const args = message.content.trim().split(/\s+/);
+  // =====================
+  // エセ鯖
+  // =====================
+const express = require("express");
+const app = express();
 
+app.get("/", (req, res) => {
+  res.send("Bot is alive");
+});
+
+app.listen(3000, () => {
+  console.log("Web server running");
+});
   // =====================
   // BUY
   // =====================
