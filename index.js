@@ -1,3 +1,19 @@
+  // =====================
+  // エセ鯖
+  // =====================
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Bot is alive");
+});
+
+app.listen(3000, () => {
+  console.log("Web server running");
+});
+  // =====================
+  // エセ鯖END
+  // =====================
 const { Client, GatewayIntentBits } = require('discord.js');
 const fetch = require('node-fetch');
 
@@ -21,19 +37,7 @@ client.on('messageCreate', async (message) => {
   if (message.author.bot) return;
 
   const args = message.content.trim().split(/\s+/);
-  // =====================
-  // エセ鯖
-  // =====================
-const express = require("express");
-const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Bot is alive");
-});
-
-app.listen(3000, () => {
-  console.log("Web server running");
-});
   // =====================
   // BUY
   // =====================
