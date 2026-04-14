@@ -93,6 +93,36 @@ client.on('messageCreate', async (message) => {
       console.error(err);
     }
   }
+  
+// =====================
+  // １$balance
+  // =====================
+if (args[0] === "$balance") {
+  const res = await fetch(`${API_URL}?type=balance&user=${message.author.id}`);
+  const text = await res.text();
+  message.reply(text);
+}
+
+  // =====================
+  // ２$price
+  // =====================
+  if (args[0] === "$price") {
+  const stock = args[1];
+
+  const res = await fetch(`${API_URL}?type=price&stock=${stock}`);
+  const text = await res.text();
+  message.reply(text);
+}
+
+  // =====================
+  // ２$ranking
+  // =====================
+  if (args[0] === "$ranking") {
+  const res = await fetch(`${API_URL}?type=ranking`);
+  const text = await res.text();
+  message.reply(text);
+}
+  
 });
 
 client.login(TOKEN);
