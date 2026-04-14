@@ -25,9 +25,9 @@ client.on('messageCreate', async (message) => {
   // =====================
   // BUY
   // =====================
-  if (args[0] === "!buy") {
+  if (args[0] === "$buy") {
     if (args.length < 3) {
-      return message.reply("使い方: !buy 銘柄 数量");
+      return message.reply("使い方: $buy 銘柄 数量");
     }
 
     const stock = args[1];
@@ -61,9 +61,9 @@ client.on('messageCreate', async (message) => {
   // =====================
   // SELL
   // =====================
-  if (args[0] === "!sell") {
+  if (args[0] === "$sell") {
     if (args.length < 3) {
-      return message.reply("使い方: !sell 銘柄 数量");
+      return message.reply("使い方: $sell 銘柄 数量");
     }
 
     const stock = args[1];
